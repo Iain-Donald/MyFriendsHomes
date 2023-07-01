@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="../static/js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <div class="centerBox">
+            <h1>View Listing</h1>
+            <form action="/editListing/{{userID}}" method="POST">
+                <input type="text" name="title" placeholder="Title">
+                <br>
+                <input type="text" name="description" id="descriptionEntry" placeholder="Description">
+                <br><br>
+                <input type="submit" value="Publish">
+            </form>
+            <a href="/allListings/{{userID}}">Back</a>
+        </div>
+    </body>
+</html>

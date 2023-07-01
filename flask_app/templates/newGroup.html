@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>New Group</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="../static/js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <div class="centerBox">
+            <h1>New Group</h1>
+            <form action="/addGroup/{{userID}}" method="POST">
+                <input type="text" name="groupName" placeholder="Enter group title" class="inputText">
+                <br>
+                <input type="text" name="groupPin" placeholder="Enter numeric pin" class="inputText">
+                <br><br>
+                <input type="submit" value="Publish" class="publish">
+            </form>
+            <a href="/allListings/{{userID}}">Back</a>
+        </div>
+    </body>
+</html>

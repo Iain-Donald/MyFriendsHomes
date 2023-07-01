@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="../static/js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <div class="centerBox">
+            <h1>Change PIN</h1>
+            <form action="/editPinPost/{{userID}}/{{GroupID}}" method="POST">
+                <input type="text" name="pin" placeholder="New PIN" class="inputText">
+                <br><br>
+                <input type="submit" value="Submit" class="publish">
+            </form>
+            <a href="/allListings/{{userID}}">Back</a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,219 @@
+{
+    "Listings": [
+        {
+            "id": "15033",
+            "title": "Iain's House",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "userID": "8964"
+        },
+        {
+            "id": "20607",
+            "title": "Sandra's house",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "userID": "1734"
+        },
+        {
+            "id": "17977",
+            "title": "Almara",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "userID": "9622"
+        }
+    ],
+    "Users": [
+        {
+            "firstName": "Iain",
+            "lastName": "Donald",
+            "email": "iaindonald@outlook.com",
+            "pw": "$2b$12$mpXrxbgpw6M7wG.OxFrSjuS1/AdA7lJV6/ta2UHe6LNBmKVLO1/lK",
+            "userID": "8964",
+            "groupIDs": [
+                "1",
+                "2"
+            ]
+        },
+        {
+            "firstName": "Sandra",
+            "lastName": "Militaru",
+            "email": "sandra.militaru@gmail.com",
+            "pw": "$2b$12$A1TIiH.dhLijygoDl3jHLeVA/8ADltLrdVIpCZM3W6/mSKzsiZMpG",
+            "userID": "1734",
+            "groupIDs": [
+                "1",
+                "2"
+            ]
+        },
+        {
+            "firstName": "Alan",
+            "lastName": "Donald",
+            "email": "ad@ad.com",
+            "pw": "$2b$12$PvEzx16n7VJR4tPXdGNoQuFJQjFKVKmasupG21gXGPyc58WueLxVy",
+            "userID": "8235"
+        },
+        {
+            "firstName": "Alan",
+            "lastName": "DOnald",
+            "email": "alandonald999@msn.com",
+            "pw": "$2b$12$VWc1X6JEOqBD6OofhRjuDeRH77sVAafks/wWQb3lsjfyb6.qJYz4y",
+            "userID": "9622"
+        },
+        {
+            "firstName": "Samara",
+            "lastName": "Donald",
+            "email": "samarajdonald@outlook.com",
+            "pw": "$2b$12$JXwHjhuW/O6Ml76iTXOV3.e7SFbrKmsOY2Xb3fbeSR2RvRHA6JELu",
+            "userID": "5786"
+        }
+    ],
+    "ListingImages": [
+        {
+            "PhotoID": "11109",
+            "path": "../static/images/snow.png",
+            "ListingID": "20607"
+        },
+        {
+            "PhotoID": "11111",
+            "path": "../static/images/alley.png",
+            "ListingID": "20607"
+        },
+        {
+            "PhotoID": "37463",
+            "path": "../static/images/big-rock-www.png",
+            "ListingID": "12951"
+        },
+        {
+            "PhotoID": "36037",
+            "path": "../static/images/water-scrap-www.png",
+            "ListingID": "12951"
+        },
+        {
+            "PhotoID": "13600",
+            "path": "../static/images/alley.png",
+            "ListingID": "19110"
+        },
+        {
+            "PhotoID": "21199",
+            "path": "../static/images/alley.png",
+            "ListingID": "15308"
+        },
+        {
+            "PhotoID": "14944",
+            "path": "../static/images/alley.png",
+            "ListingID": "16617"
+        },
+        {
+            "PhotoID": "26031",
+            "path": "../static/images/alley.png",
+            "ListingID": "13223"
+        },
+        {
+            "PhotoID": "30581",
+            "path": "../static/images/alley.png",
+            "ListingID": "13706"
+        },
+        {
+            "PhotoID": "34249",
+            "path": "../static/images/alley.png",
+            "ListingID": "21066"
+        },
+        {
+            "PhotoID": "11321",
+            "path": "../static/images/alley.png",
+            "ListingID": "21534"
+        },
+        {
+            "PhotoID": "13127",
+            "path": "../static/images/alley.png",
+            "ListingID": "17977"
+        },
+        {
+            "PhotoID": "21380",
+            "path": "../static/images/bear.png",
+            "ListingID": "17977"
+        },
+        {
+            "PhotoID": "21381",
+            "path": "../static/images/bear.png",
+            "ListingID": "15033"
+        },
+        {
+            "PhotoID": "15716",
+            "path": "../static/images/alley.png",
+            "ListingID": "11222"
+        },
+        {
+            "PhotoID": "23060",
+            "path": "../static/images/alley.png",
+            "ListingID": "18139"
+        }
+    ],
+    "Groups": [
+        {
+            "GroupID": "1",
+            "GroupName": "Sandra's Group",
+            "pin": "42256",
+            "ListingIDs": [
+                "15033",
+                "20607",
+                "15308",
+                "16617",
+                "13223",
+                "13706",
+                "21534",
+                "11222",
+                "18139"
+            ],
+            "UserIDs": [
+                "1734",
+                "8964"
+            ]
+        },
+        {
+            "GroupID": "2",
+            "GroupName": "Iain's Group",
+            "pin": "42255",
+            "ListingIDs": [
+                "15033",
+                "21066"
+            ],
+            "UserIDs": [
+                "8964"
+            ]
+        },
+        {
+            "GroupID": "28143",
+            "GroupName": "TEST",
+            "pin": "1222",
+            "ListingIDs": [
+                "15033",
+                "19110"
+            ],
+            "UserIDs": [
+                "8964"
+            ]
+        },
+        {
+            "GroupID": "19909",
+            "GroupName": "abcd",
+            "pin": "12345",
+            "ListingIDs": [
+                "15033"
+            ],
+            "UserIDs": [
+                "8235"
+            ]
+        },
+        {
+            "GroupID": "35492",
+            "GroupName": "Group1",
+            "pin": "12345",
+            "ListingIDs": [
+                "15033",
+                "17977"
+            ],
+            "UserIDs": [
+                "9622",
+                "5786"
+            ]
+        }
+    ]
+}

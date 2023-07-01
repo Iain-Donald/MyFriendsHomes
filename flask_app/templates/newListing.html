@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>New Listing</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="../static/js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <div class="centerBox">
+            <h1>New Listing</h1>
+            <form action="/saveNewListing/{{userID}}" method="POST">
+                <input type="text" name="title" placeholder="Title" class="inputText">
+                <br>
+                <input type="text" name="description" id="descriptionEntry" class="inputTextHidden" style="display: none;">
+                <br>
+                <textarea id="DescriptionTextarea" placeholder="Description" rows="12" cols="70" class="inputTextArea"></textarea>
+                <br><br>
+                <select id="groupIDSelect" name="groups" class="group" style="margin: 0px 5vw;">
+                    {%for i in range(Groups|length)%}
+                    <option value="{{Groups[i]['GroupID']}}">{{Groups[i]['GroupName']}}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                <input type="submit" value="Publish" class="publish">
+            </form>
+            <a href="/allListings/{{userID}}">Back</a>
+        </div>
+        <script>
+            var inputToReplace = document.getElementById('descriptionEntry');
+            var replacementTextarea = document.getElementById("DescriptionTextarea");
+            //document.body.appendChild(replacementTextarea);
+
+            var copyValueOver = function(){
+                // You may have to do some fancy encoding of newlines and other nasty bits, depending on what you expect to get.
+                inputToReplace.value = replacementTextarea.value;
+            };
+
+            // This bit may be quite tricky depending on where the data comes from and so on, change and keyup are easy and just to show the way
+            replacementTextarea.addEventListener('change', copyValueOver);
+            replacementTextarea.addEventListener('keyup', copyValueOver);
+        </script>
+    </body>
+</html>

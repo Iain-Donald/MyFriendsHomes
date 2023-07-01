@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Join-Leave Group</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="../static/js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <div class="centerBox">
+            <h1>Join/Leave Group</h1>
+            <form method="POST" enctype="multipart/form-data" action="/joinGroup/{{userID}}">
+                <input type="text" id="IDnumEntry" name="IDnum" class="inputText" placeholder="Group ID number">
+                <br>
+                <input type="text" id="pinEntry" name="pin" class="inputText" placeholder="Enter pin (if joining)">
+                <br><br>
+                <input type="submit" value="Join" class="publish" style="width: 50%; margin-bottom: 10px;">
+            </form>
+            <form method="POST" enctype="multipart/form-data" action="/leaveGroup/{{userID}}">
+                <input type="text" id="IDnumEntryLeave" name="IDnumLeave" class="inputText" placeholder="Group ID number" style="display: none;">
+                <input type="submit" value="Leave" class="publish" style="width: 50%;">
+            </form>
+            <br>
+            <a href="/allListings/{{userID}}">Back</a>
+        </div>
+        <script>
+            var inputToReplace = document.getElementById('IDnumEntryLeave');
+            var sourceText = document.getElementById("IDnumEntry");
+            //document.body.appendChild(replacementTextarea);
+
+            var copyValueOver = function(){
+                // You may have to do some fancy encoding of newlines and other nasty bits, depending on what you expect to get.
+                inputToReplace.value = sourceText.value;
+            };
+
+            // This bit may be quite tricky depending on where the data comes from and so on, change and keyup are easy and just to show the way
+            sourceText.addEventListener('change', copyValueOver);
+            sourceText.addEventListener('keyup', copyValueOver);
+        </script>
+    </body>
+</html>

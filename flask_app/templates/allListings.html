@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>All Listings</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="../static/js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <div id="JSuserID" class="{{currentUser['userID']}}"></div>
+        <div class="header">
+            <h1 id="helloText">Hello, {{currentUser['firstName']}}</h1>
+            <div class="rightHeaderButtons">
+                <a href="/newListing/{{currentUser['userID']}}" type="button" class="newListing">New Listing</a>
+                <a href="/newGroup/{{currentUser['userID']}}" type="button" class="newListing">New Group</a>
+                <a href="/joinLeave/{{currentUser['userID']}}" type="button" class="newListing">Join/Leave Group</a>
+            </div>
+        </div>
+        <a href="/login" class="logout">Logout</a><br><br>
+        <div class="subHeading">
+            <select id="groupIDSelect" name="groups" class="group" onchange="updateGroupSelect()"><!--onchange='updateGroupSelect()'-->
+                <optgroup style="font-size: 12pt; text-decoration: none;" label="Your Groups"></optgroup>
+                {% set testing = 'it worked' %}
+                {%for i in range(Groups|length)%}
+                    {%if currentUser['userID'] in Groups[i]['UserIDs']%}
+                        {%if(Groups[i]['GroupID'] == currentGroup['GroupID'])%}
+                            <option selected value="{{Groups[i]['GroupID']}}">{{Groups[i]['GroupName']}}</option>
+                        {%else%}
+                            <option value="{{Groups[i]['GroupID']}}">{{Groups[i]['GroupName']}}</option>
+                        {%endif%}
+                    {%endif%}
+                {% endfor %}
+            </select>
+            <div class="showMembers" id="members">
+                <select class="group" style="margin-left: 1vw;">
+                    <option selected value="Members">Members</option>
+                    {%for i in range(currentGroup['UserIDs']|length)%}
+                        <option>{{currentGroup['UserIDs'][i]}}</option>
+                    {% endfor %}
+                </select>
+                
+            </div>
+        </div>
+        <br>
+        <div style="display: inline-flex">
+            <p style="font-size: 10pt; margin-left: 5vw;">Group ID #<b style="color:#3f2d51;">{{currentGroup['GroupID']}}</b></p>
+            <p style="cursor: pointer; color:#3f2d51; font-size: 10pt; margin-left: 10px;" id="showPinText" onclick="showPin()"><b>[ show pin ]</b></p>
+            <p style="cursor: pointer; color:#3f2d51; font-size: 10pt; margin-left: 10px; display: none;" id="pinShown" onclick="hidePin()"><b>{{currentGroup['pin']}} </b>[ hide ]</p> <a href="/editPin/{{currentUser['userID']}}/{{currentGroup['GroupID']}}" style="text-decoration:none; cursor: pointer; color:#3f2d51; font-size: 10pt; margin: auto; display: none;" id="change">[ change ]</a><!--a type="button" class="newListing" style="width: 20px; height: 15px;">hide</a> <a type="button" class="newListing" style="width: 20px; height: 15px;">change</a-->
+        </div>
+            <!--a href="/testNum/1" style="text-decoration: none; text-align: left;">Leave Group</a-->
+        <p id = "testing" style="color:darkcyan; text-align: center;"></p>
+        
+        <!--Listings-->
+        <div class="listingsContainer">
+        {%for i in range(Listings|length)%}
+        {%if Listings[i]['id'] in currentGroup['ListingIDs']%}
+        <div class="listingBody" id="listingNum{{i}}">
+            <div class="listingAbove">
+            <div class="headingBox">
+                <h2 class="headingLines" style="margin-top: 3.5%;">{{Listings[i]['title']}}</h2>
+                {%if (userIDs[i] == currentUser['userID'])%}
+                    <h4 class="headingLines">Listed by <i style="color:#3f2d51">you</i></h4>
+                    <h4 class="headingLines"><i><a href="/deleteListing/{{currentUser['userID']}}/{{Listings[i]['id']}}" style="color:#3f2d51; text-decoration: none;">(delete, </a><a href="/editListing/{{currentUser['userID']}}/{{Listings[i]['id']}}" style="color:#3f2d51; text-decoration: none;">edit)</a></i></h4>
+                    <h4 class="headingLines"><i><a href="/upImg/{{currentUser['userID']}}/{{Listings[i]['id']}}" style="color:#3f2d51; text-decoration: none;">add photos</a></i></h4>
+                {% else %}
+                    <h4 class="headingLines">Listed by <div id="otherUser">{{allListingsUserList[i]}}</div></h4>
+                {%endif%}
+            </div>
+            
+            <div class="photoBox">
+                <img src="{{listingImages[i][0][0]}}" alt="Mountain" class="imageBox" onclick="openListingImages('{{i}}');">
+                <div class="largeImg" id="largeImgID{{i}}" onclick="closeListingImages('{{i}}')">
+                    <h2 class="imgHeader">All Photos</h2>
+                    <p class="imgHeader" style="font-size: 9pt">click anywhere to close</p>
+                    <!--span class="close" onclick="closeModal()">&times;</span-->
+                    {%for j in range(listingImages[i]|length)%}
+                    <a class="delImgButton" href="/deleteImage/{{listingImages[i][j][1]}}/{{currentUser['userID']}}">X <i style="font-size: small;">delete</i></a>
+                    <img src="{{listingImages[i][j][0]}}" alt="Mountain" class="largeImgContent">
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="descriptionBody">
+                <p>{{Listings[i]['description']}}</p>
+            </div>
+            </div>
+        </div>
+        {%endif%}
+        {% endfor %}
+        </div>
+    <script>
+        function showPin(){
+            document.getElementById("pinShown").style.display = "flex";
+            document.getElementById("change").style.display = "flex";
+            document.getElementById("showPinText").style.display = "none";
+        }
+
+        function hidePin(){
+            document.getElementById("pinShown").style.display = "none";
+            document.getElementById("change").style.display = "none";
+            document.getElementById("showPinText").style.display = "flex";
+        }
+
+
+        function updateGroupSelect(){
+            var x = document.getElementById("groupIDSelect").value;
+            if(x == ""){
+                console.log("x: " + x);
+                document.getElementById("testing").innerHTML = "no groups";
+            }
+            else {
+                console.log("x not null: " + x);
+                document.getElementById("testing").innerHTML = "loading...";
+                window.location.href = '/setGroupSel/' + x + "/" + document.getElementById("JSuserID").className;
+            }
+            
+        }
+
+        function openListingImages(i){
+            document.getElementById("largeImgID" + i).style.display = "block";
+        }
+
+        function closeListingImages(i){
+            document.getElementById("largeImgID" + i).style.display = "none";
+        }
+
+        function colorFromName(name){
+            var color = new Array (0, 0, 0);
+
+            var randPixelValue = Math.floor(Math.random() * 256);
+
+            console.log("character num: " + Array.from(name)[0], 36 - 9);
+
+            if(parseInt(Array.from(name)[0], 36 - 9) % 2 == 0){
+                color[0] = randPixelValue;
+                color[1] = 70
+                color[2] = 255 - randPixelValue;
+                console.log("even");
+            } else {
+                color[0] = Math.floor(randPixelValue / 2);
+                color[1] = randPixelValue;
+                color[2] = 70;
+                console.log("odd");
+            }
+
+            var colorString = "rgb(" + color + ")";
+
+            //document.getElementById("otherUser").style.color = colorString;
+        }
+
+        console.log(colorFromName("S"));
+        //rgb(85, 170, 70)
+    </script>
+    {%if (not groupSelected)%}
+    <script>updateGroupSelect();</script>
+    {%endif%}
+    </body>
+</html>

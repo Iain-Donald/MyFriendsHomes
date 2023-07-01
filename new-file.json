@@ -1,0 +1,56 @@
+{
+  "Listings": [
+    {
+      "id": "0",
+      "title": "Iain's house",
+      "description": "description zero",
+      "userID": "2737"
+    },
+    {
+      "id": "1",
+      "title": "Iain's Scotland house",
+      "description": "description one",
+      "userID": "2737"
+    },
+    {
+      "id": "2",
+      "title": "Sandra's house",
+      "description": "description two",
+      "userID": "4514"
+    },
+    {
+      "id": "13153",
+      "title": "TITLE",
+      "description": "DESCRIPTION",
+      "userID": "2737"
+    },
+    {
+      "id": "15655",
+      "title": "SANDRAS TITLE",
+      "description": "SANDRAS DESCRIPTION",
+      "userID": "4514"
+    },
+    {
+      "id": "15864",
+      "title": "my new old new old new",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "userID": "2737"
+    }
+  ],
+  "Users": [
+    {
+      "firstName": "Iain",
+      "lastName": "Donald",
+      "email": "iaindonald@outlook.com",
+      "pw": "password",
+      "userID": "2737"
+    },
+    {
+      "firstName": "Sandra",
+      "lastName": "Militaru",
+      "email": "sandra.militaru@gmail.com",
+      "pw": "password",
+      "userID": "4514"
+    }
+  ]
+}
