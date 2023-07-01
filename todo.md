@@ -37,6 +37,7 @@
  - create base application package and start testing for errors (db.json starts empty but with Users, Listings, Groups, etc)
  - publish official release on Github
  - db clean function (primarily for images after listing has been deleted)
+ - 'New Listing' needs validation for being part of a group
 
 errors:
   [x] listings will not display until group select is changed
