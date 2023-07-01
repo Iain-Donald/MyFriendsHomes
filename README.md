@@ -1,8 +1,4 @@
-# FlaskTravelApp
-
-Flask version of TravelAppByIain
-
-Version in_progress
+# Version in_progress
 
 <h2>Installation/Setup</h2>
 
