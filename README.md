@@ -1,4 +1,10 @@
 # Version in_progress
+<p>A full-stack web app. This one is using:<br>
+a JSON file modified and accessed by 'dbtalk.py', alongside bcrypt for the database, <br>
+Python Flask to handle the routes and most of the back-end, <br>
+and HTML, CSS, and JS (to handle default dropdown selection and coloring).<br>
+
+Thanks for looking!</p>
 
 <h2>Installation/Setup</h2>
 
