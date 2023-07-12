@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'MyFriendsHomes'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2B5136353CAE4CD3AD0EA6D59659DBD7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1DEBF677A27E4AE0B2BA1E9676C04FC8 }}
