@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/80404439-0d7a-4d1c-b6b9-802149399889/resourceGroups/MyFriendsHomes/providers/Microsoft.Web/sites/MyFriendsHomes",
+    "appService.deploySubpath": "."
+}
